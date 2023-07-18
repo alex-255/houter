@@ -9,14 +9,19 @@
 
 <body <?php body_class(); ?>>
     <div id="top-part" class="container-fluid">
-        <div id="navigation-bar-hamburger">
+        <div class="hamburger">
+        </div>
+        <div class="overlay">
         </div>
         <div class="row">
 
-            <div class="col-12 col-lg-6 logo-area"
+            <div class="col-12 col-xl-6 logo-area"
                 style="background-image:url(<?php echo get_template_directory_uri() . "/assets/images/Color-Blur.png"; ?>);">
+                <div class="logo">
                 <?php the_custom_logo(); ?>
                 <a class="sitename" href="<?php echo site_url(); ?>"><?php bloginfo('name'); ?></a>
+                </div>
+                
                 <h1>find the place to live <span>your dreams</span> easily here</h1>
                 <p>Everything you need about finding your place to live will be here, where it will be easier for you
                 </p>
@@ -35,7 +40,7 @@
                 </div>
             </div>
 
-            <div class="col-12 col-lg-6 menu-area"
+            <div class="col-12 col-xl-6 menu-area"
                 style="background-image:url(<?php echo get_template_directory_uri() . "/assets/images/squared-house.webp"; ?>);">
                 <div class="bar">
                     <?php wp_nav_menu( array(
