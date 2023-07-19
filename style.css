@@ -408,33 +408,91 @@
     border-bottom: 1px solid #FFFFFF;
   }
 }
-.our-rec--slider {
+#our-recommendations {
   padding-left: 120px;
   padding-right: 120px;
+  margin-top: 120px;
 }
-.our-rec--slider--item {
-  margin-right: 40px;
-}
-.our-rec--slider--item--image {
+#our-recommendations .our-rec--title {
+  color: #F59E0B;
+  font-family: Lexend, sans-serif;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  text-transform: capitalize;
+  display: block;
   position: relative;
 }
-.our-rec--slider--item--image img {
+#our-recommendations .our-rec--title::before {
+  content: "";
+  position: absolute;
+  height: 1px;
+  width: 32px;
+  background-color: #F59E0B;
+  left: -40px;
+  top: 50%;
+}
+#our-recommendations .our-rec--top-bar {
+  display: flex;
+  align-items: center;
+}
+#our-recommendations .our-rec--top-bar--title {
+  color: #1B1C57;
+  font-family: Lexend, sans-serif;
+  font-size: 32px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+  text-transform: capitalize;
+  margin-right: 140px;
+}
+#our-recommendations .our-rec--top-bar--menu--item {
+  border-radius: 32px;
+  border: 1px solid #E0E3EB;
+  color: #888B97;
+  font-family: Lexend, sans-serif;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 155.556%;
+  padding: 12px 24px;
+  margin-right: 28px;
+}
+#our-recommendations .our-rec--top-bar--menu--item:hover, #our-recommendations .our-rec--top-bar--menu--item:focus {
+  background-color: #D1FAE5;
+  color: #10B981;
+}
+#our-recommendations .our-rec--slider {
+  margin-top: 40px;
+}
+#our-recommendations .our-rec--slider--item {
+  display: none;
+  margin-right: 40px;
+}
+#our-recommendations .our-rec--slider--item.shown {
+  display: block;
+}
+#our-recommendations .our-rec--slider--item--image {
+  position: relative;
+}
+#our-recommendations .our-rec--slider--item--image img {
   width: 100%;
   aspect-ratio: 1/1.3;
   object-fit: cover;
   border-radius: 24px;
 }
-.our-rec--slider--item--image .term {
+#our-recommendations .our-rec--slider--item--image .term {
   position: absolute;
   left: 16px;
   bottom: 16px;
   padding: 8px 16px;
   border-radius: 32px;
 }
-.our-rec--slider--item--image .term i {
+#our-recommendations .our-rec--slider--item--image .term i {
   margin-right: 10px;
 }
-.our-rec--slider--item--image .term.deal-type-popular {
+#our-recommendations .our-rec--slider--item--image .term.deal-type-popular {
   background-color: #FEE2E2;
   color: var(--red-500, #EF4444);
   font-family: Lexend, sans-serif;
@@ -444,7 +502,7 @@
   line-height: normal;
   text-transform: capitalize;
 }
-.our-rec--slider--item--image .term.deal-type-best-deals {
+#our-recommendations .our-rec--slider--item--image .term.deal-type-best-deals {
   background-color: #D1FAE5;
   color: #047857;
   font-family: Lexend, sans-serif;
@@ -454,7 +512,7 @@
   line-height: normal;
   text-transform: capitalize;
 }
-.our-rec--slider--item--image .term.deal-type-new-house {
+#our-recommendations .our-rec--slider--item--image .term.deal-type-new-house {
   background-color: #DBEAFE;
   color: #1D4ED8;
   font-family: Lexend, sans-serif;
@@ -464,7 +522,7 @@
   line-height: normal;
   text-transform: capitalize;
 }
-.our-rec--slider--item--image .term.deal-type-other {
+#our-recommendations .our-rec--slider--item--image .term.deal-type-other {
   background-color: #DBEAFE;
   color: #1D4ED8;
   font-family: Lexend, sans-serif;
@@ -473,6 +531,102 @@
   font-weight: 500;
   line-height: normal;
   text-transform: capitalize;
+}
+#our-recommendations .our-rec--slider--item--caption {
+  margin-top: 24px;
+}
+#our-recommendations .our-rec--slider--item--caption .title a {
+  color: #0E1735;
+  font-family: Lexend, sans-serif;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 133.333%;
+  text-decoration: none;
+}
+#our-recommendations .our-rec--slider--item--caption .title a:hover, #our-recommendations .our-rec--slider--item--caption .title a:focus {
+  text-decoration: underline;
+}
+#our-recommendations .our-rec--slider--item--caption .price {
+  color: #3C4563;
+  font-family: Lexend, sans-serif;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 160%;
+  margin-top: 8px;
+}
+#our-recommendations .our-rec--slider--item--caption .person {
+  display: flex;
+  align-items: center;
+}
+#our-recommendations .our-rec--slider--item--caption .person--img {
+  width: 40px;
+  aspect-ratio: 1/1;
+  object-fit: cover;
+  margin-right: 16px;
+  border-radius: 100%;
+  border: 1px solid rgba(0, 0, 0, 0.5);
+  align-self: center;
+}
+#our-recommendations .our-rec--slider--item--caption .person--desc .name {
+  color: #0E1735;
+  font-family: Lexend, sans-serif;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 133.333%;
+}
+#our-recommendations .our-rec--slider--item--caption .person--desc .occupation {
+  color: #888B97;
+  font-family: Lexend, sans-serif;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 157.143%;
+  margin: 0;
+}
+#our-recommendations .our-rec--slider .slick-prev, #our-recommendations .our-rec--slider .slick-next {
+  font-size: 0;
+  line-height: 0;
+  top: -65px;
+  display: block;
+  width: 70px;
+  height: 50px;
+  padding: 0;
+  -webkit-transform: translate(0, -50%);
+  -ms-transform: translate(0, -50%);
+  transform: translate(0, -50%);
+  color: transparent;
+  border: 1px solid rgb(182, 182, 182);
+  outline: none;
+  background: #6cd4b2;
+  border-radius: 32px;
+}
+#our-recommendations .our-rec--slider .slick-prev:hover, #our-recommendations .our-rec--slider .slick-next:hover {
+  background: #10B981;
+}
+#our-recommendations .our-rec--slider .slick-prev:before, #our-recommendations .our-rec--slider .slick-next:before {
+  font-family: "bootstrap-icons";
+  font-size: 30px;
+  line-height: 1;
+  opacity: 1;
+  color: white;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+#our-recommendations .our-rec--slider .slick-prev {
+  left: unset;
+  right: 110px;
+}
+#our-recommendations .our-rec--slider .slick-prev:before {
+  content: "\f27a";
+}
+#our-recommendations .our-rec--slider .slick-next {
+  right: 30px;
+}
+#our-recommendations .our-rec--slider .slick-next:before {
+  content: "\f27b";
 }
 
 /*# sourceMappingURL=style.css.map */

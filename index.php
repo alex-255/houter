@@ -3,13 +3,14 @@ get_header();
 ?>
 
 <section id="our-recommendations">
-    <h6>Our Recommendations</h6>
+    <h6 class="our-rec--title">Our Recommendations</h6>
     <div class="our-rec--top-bar">
-        <h2>Featured House</h2>
+        <h2 class="our-rec--top-bar--title">Featured House</h2>
         <div class="our-rec--top-bar--menu">
-            <a href="#">House</a>
-            <a href="#">Villa</a>
-            <a href="#">Apartment</a>
+            <a class="our-rec--top-bar--menu--item house" href="#">House</a>
+            <a class="our-rec--top-bar--menu--item villa" href="#">Villa</a>
+            <a class="our-rec--top-bar--menu--item apartment" href="#">Apartment</a>
+            <a class="our-rec--top-bar--menu--item all shown" href="#">All</a>
         </div>
     </div>
     <div class="our-rec--slider">
@@ -29,7 +30,10 @@ get_header();
 
                 while ( $the_query->have_posts() ) {
                     $the_query->the_post(); ?>
-                        <div class="our-rec--slider--item">
+                        <div class="our-rec--slider--item shown <?php 
+                        $types = wp_get_post_terms(get_the_ID(), "real_estate_type");
+                        if ($types[0]->slug) {echo esc_html($types[0]->slug);}
+                        ?>">
                             <div class="our-rec--slider--item--image">
                                 <?php if(has_post_thumbnail()) { 
                                     $alt = get_post_meta( get_post_thumbnail_id(), '_wp_attachment_image_alt', true ); ?>
@@ -58,11 +62,18 @@ get_header();
                             </div>
                             
                             
-                            <div class="our-rec--slider--caption">
-                                <a href="<?php the_permalink(); ?>">
-                                    <h3><?php the_title(); ?></h3>
-                                </a>
-                                <p><?php echo esc_html( get_field('heading') ); ?></p>
+                            <div class="our-rec--slider--item--caption">
+                                
+                                    <h3 class="title"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h3>
+                                
+                                <p class="price"><?php echo esc_html( get_field('price') ); ?></p>
+                                <div class="person">
+                                    <img class="person--img" src="<?php echo esc_html( get_field('avatar')['sizes']['thumbnail'] ); ?>" alt="avatar">
+                                    <div class="person--desc">
+                                        <h4 class="name"><?php echo esc_html( get_field('name') ); ?></h4>
+                                        <p class="occupation"><?php echo esc_html( get_field('occupation') ); ?></p>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     <?php

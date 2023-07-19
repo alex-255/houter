@@ -1,3 +1,7 @@
+( function( $ ) {
+
+
+
 window.addEventListener("load", () => {
 
     const header = document.getElementById("top-part");
@@ -13,17 +17,90 @@ window.addEventListener("load", () => {
   };
 
 
+  document.querySelectorAll(".our-rec--top-bar--menu--item").forEach(function (item) {
+    
+      item.addEventListener("click", function(event) {
+        event.preventDefault();
+
+        if (item.classList.contains("house")) {
+          document.querySelectorAll(".our-rec--slider--item.house").forEach((element)=>{
+            element.classList.add("shown");
+          });
+          document.querySelectorAll(".our-rec--slider--item:not(.house)").forEach((element)=>{
+            element.classList.remove("shown");
+          });
+
+          item.classList.add("shown");
+          document.querySelectorAll(".our-rec--top-bar--menu--item:not(.house)").forEach((element)=>{
+            element.classList.remove("shown");
+          });
+        } 
+        
+        if (item.classList.contains("villa")) {
+          document.querySelectorAll(".our-rec--slider--item.villa").forEach((element)=>{
+            element.classList.add("shown");
+          });
+          document.querySelectorAll(".our-rec--slider--item:not(.villa)").forEach((element)=>{
+            element.classList.remove("shown");
+          });
+
+          item.classList.add("shown");
+          document.querySelectorAll(".our-rec--top-bar--menu--item:not(.villa)").forEach((element)=>{
+            element.classList.remove("shown");
+          });
+        } 
+        
+        if (item.classList.contains("apartment")) {
+          document.querySelectorAll(".our-rec--slider--item.apartment").forEach((element)=>{
+            element.classList.add("shown");
+          });
+          document.querySelectorAll(".our-rec--slider--item:not(.apartment)").forEach((element)=>{
+            element.classList.remove("shown");
+          });
+
+          item.classList.add("shown");
+          document.querySelectorAll(".our-rec--top-bar--menu--item:not(.apartment)").forEach((element)=>{
+            element.classList.remove("shown");
+          });
+        }
+
+        if (item.classList.contains("all")) {
+          document.querySelectorAll(".our-rec--slider--item").forEach((element)=>{
+            element.classList.add("shown");
+          });
+
+          item.classList.add("shown");
+          document.querySelectorAll(".our-rec--top-bar--menu--item:not(.all)").forEach((element)=>{
+            element.classList.remove("shown");
+          });
+        }
+      });
+    
+
+    
+
+  });
+  
+  
+
 });
 
-( function( $ ) {
+
+
+
+
+
+
+
+
     
     $(document).ready(function(){
       $('.menu-area--slider').slick({
-          infinite: true,
+          // infinite: true,
           slidesToShow: 2,
           slidesToScroll: 1,
           dots: false,
-          arrows: false,
+          arrows: true,
           autoplay: true,
           // adaptiveHeight: true,
           responsive: [
