@@ -106,7 +106,7 @@ window.addEventListener("load", () => {
     
     $(document).ready(function(){
       $('.menu-area--slider').slick({
-          infinite: true,
+          // infinite: true,
           slidesToShow: 2,
           slidesToScroll: 1,
           dots: false,
