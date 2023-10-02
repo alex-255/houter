@@ -184,7 +184,14 @@ get_header();
             </div>
         </div>
         <div class="col-12 col-xl-6">
-            2 of 2
+            <?php if(has_post_thumbnail()) { 
+                                    $alt = get_post_meta( get_post_thumbnail_id(), '_wp_attachment_image_alt', true ); ?>
+                <img src="<?php echo get_the_post_thumbnail_url(get_the_ID(), 'large'); ?>"
+                    alt="<?php echo esc_html($alt); ?>" loading="lazy" class="video-tour--image" />
+                <?php } else { ?>
+                <img src="<?php echo get_template_directory_uri() . "/assets/images/placeholder.jpg"?>"
+                    alt="placeholder" loading="lazy" class="video-tour--image" />
+                <?php } ?>
         </div>
     </div>
     <?php 

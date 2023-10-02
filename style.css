@@ -660,7 +660,11 @@
   padding-right: 120px;
   margin-left: auto;
   margin-right: auto;
-  margin-top: 120px;
+  padding-top: 120px;
+  padding-bottom: 120px;
+  background-image: url(./assets/images/bg1.svg), url(./assets/images/bg2.svg);
+  background-position: top right, center right;
+  background-repeat: no-repeat, no-repeat;
 }
 #video-tour .video-tour--title {
   color: #F59E0B;
@@ -708,6 +712,12 @@
 #video-tour .video-tour--paragraph-bold-blue {
   color: #1B1C57;
   font-weight: 600;
+}
+#video-tour .video-tour--image {
+  width: 100%;
+  aspect-ratio: 1/0.7;
+  object-fit: cover;
+  border-radius: 14px;
 }
 #video-tour .icon-and-text {
   margin-top: 16px;
