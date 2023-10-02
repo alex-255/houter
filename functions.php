@@ -34,10 +34,11 @@ if ( ! function_exists( 'houter2023_register_nav_menu' ) ) {
 
 	function houter2023_register_nav_menu(){
 		register_nav_menus( array(
-	    	'primary_menu' => esc_html(__( 'Primary Menu', 'houter2023' )),
-	    	'footer_menu_1'  => esc_html(__( 'Footer Menu One', 'houter2023' )),
-            'footer_menu_2'  => esc_html(__( 'Footer Menu Two', 'houter2023' )),
-            'footer_social_icons'  => esc_html(__( 'Footer Social Icons', 'houter2023' ))
+      'primary_menu' => esc_html(__( 'Primary Menu', 'houter2023' )),
+      'footer_menu_1'  => esc_html(__( 'Footer Menu One', 'houter2023' )),
+      'footer_menu_2'  => esc_html(__( 'Footer Menu Two', 'houter2023' )),
+      'footer_menu_3'  => esc_html(__( 'Footer Menu Three', 'houter2023' )),
+      'footer_social_icons'  => esc_html(__( 'Social Icons Menu', 'houter2023' ))
 		) );
 	}
 	add_action( 'after_setup_theme', 'houter2023_register_nav_menu', 0 );

@@ -919,4 +919,138 @@ $color-black: #000000;
     }
 }
 
+@media (max-width: 900px) {
+    #video-tour {
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+}
+
+#footer {
+    max-width: calc(1440px + 120px*2);
+    padding-left: 120px;
+    padding-right: 120px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-top: 120px; 
+    padding-bottom: 120px;
+    background-image: url(./assets/images/bg3.svg), url(./assets/images/bg4.svg);
+    background-position: bottom right, bottom right;
+    background-repeat: no-repeat, no-repeat;
+
+    .header-6 {
+        display: flex;
+        align-items: center;
+        margin-bottom: 16px;
+
+        h6 {
+            margin-left: 16px;
+            margin-bottom: 0;
+        }
+    }
+
+    h6 {
+        margin-bottom: 16px;
+        color:#1B1C57;
+        font-family: $font-lexend;
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: normal;
+        text-transform: capitalize;
+    }
+
+    .paragraph {
+        color: #626687;
+        font-family: $font-lexend;
+        font-size: 14px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 171.4%;
+        max-width: 320px;
+    }
+
+    .footer--social-icons {
+        margin-top: 90px;
+    }
     
+    .footer--social-icons ul {
+        padding: 0;
+        display: flex;
+        flex-direction: row;
+    }
+    
+    .footer--social-icons li {
+        list-style: none;
+        margin-right: 16px;
+    }
+    
+    .footer--social-icons li:last-child {
+        margin-right: 0;
+    }
+    
+    .footer--social-icons li:hover .bi::before {
+        color: #ffffff;
+    }
+
+    .footer--social-icons a {
+        display: flex;
+        background-color: $color-white;
+        text-decoration: none;
+        width: 36px;
+        height: 36px;
+        justify-content: center;
+        align-items: center;
+        border-radius: 100%;
+        border: none;
+        line-height: 1;
+    }
+
+    .footer--social-icons li:hover a {
+        background-color: #10c0e7;
+        border: none;
+    }
+    
+    .footer--social-icons .bi::before {
+        font-size: 18px;
+        color: $color-blue;
+        vertical-align: middle;
+    }
+
+    .menu {
+        list-style-type: none;
+        padding: 0;
+
+        li {
+            padding: 6px 6px 6px 0px;
+
+            a {
+                color: #888B97;
+                font-family: $font-lexend;
+                font-size: 14px;
+                font-style: normal;
+                font-weight: 400;
+                line-height: normal;
+                text-transform: capitalize;
+                text-decoration: none;
+            }
+        }
+    }
+}
+
+@media (max-width: 900px) {
+    #footer {
+        padding-left: 10px;
+        padding-right: 10px;
+
+        .col-12 {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .menu li {
+            text-align: center;
+        }
+    }
+}
